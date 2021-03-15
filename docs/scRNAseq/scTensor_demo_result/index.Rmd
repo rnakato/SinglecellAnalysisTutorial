@@ -1,0 +1,230 @@
+---
+title: scTencor_demo
+author: The person who runs this script
+date: "`r Sys.time()`"
+output:
+ BiocStyle::html_document:
+  toc_float: true
+vignette: >
+ %\VignetteIndexEntry{Vignette Title}
+ %\VignetteEngine{knitr::rmarkdown}
+ %\VignetteEncoding{UTF-8}
+---
+
+
+
+# About scTensor Algorithm
+
+![](Workflow_2.png)
+[scTensor](https://bioconductor.org/packages/release/bioc/html/scTensor.html) is the R/Bioconductor package for visualization of cell-cell interaction within single-cell RNA-Seq data. The calculation consists of several steps.
+
+Firstly, [LRBase.XXX.eg.db](https://bioconductor.org/packages/release/bioc/html/LRBase.Hsa.eg.db.html)-type package is loaded for retriving ligand-receptor gene relationship (XXX is the abbreviation of some organisms like "Hsa" as Homo sapiens). scTensor searches the corresponding pair of genes in the rownames of input data matrix and extracted as vector. In this step, the gene identifier is limited as [NCBI Gene ID](https://www.ncbi.nlm.nih.gov/gene) for now.
+
+Next, the all elements of extracted two vectors are summed up with all possible combination (Kronecker sum) and summarized as a matrix. Here, the multiple matrices can be represented as a three-order "tensor" (Ligand-Cell * Receptor-Cell * LR-Pair). scTensor decomposes the tensor into a small tensor (core tensor) and three factor matrices. Tensor decomposition is very similar to the matrix decomposition like PCA (principal component analysis). The core tensor is similar to eigenvalue of PCA and means how much the pattern is outstanding. Likewise, three matrices is similar to the PC scores and loadings of PCA and represents which ligand-cell/receptor-cell/LR-pair are informative. When the matrices have negative values, distinguishing that which direction (+/-) is important and which is not, is difficult to interpret and laboring task. That's why, scTensor performs non-negative Tucker decomposition (NTD), which is non-negative version of Tucker decomposition (c.f. [nnTensor](https://cran.r-project.org/package=nnTensor)). 
+
+Finaly, the result of NTD is summarized as this report. Most of plots belows are visualized by [plotly](https://plot.ly/r/) package and interactively search the presise information of the plot. The three factor matrices can be interactively viewed and which celltypes are responds to the cell-cell interaction.The mode-3 (LR-pair) direction of sum of the core tensor is calculated and visualized as Ligand-Receptor Patterns. Detail of (Ligand-Cell, Receptor-Cell, LR-pair) Patterns are also visualized as below.
+
+For more detail, visit the [vignette](https://bioconductor.org/packages/devel/bioc/vignettes/scTensor/inst/doc/scTensor.html) of [scTensor](https://bioconductor.org/packages/release/bioc/html/scTensor.html)
+
+
+# Global statistics and plots
+
+The result of scTensor is saved as a R binary file (reanalysis.RData).
+```{r}
+load("reanalysis.RData")
+
+# SingleCellExperiment object
+sce
+# Data size
+metadata(sce)$datasize
+# Reduced data size
+metadata(sce)$ranks
+# Reconstruction Error of NTD
+head(metadata(sce)$recerror)
+tail(metadata(sce)$recerror)
+# Relative Change of NTD
+head(metadata(sce)$relchange)
+tail(metadata(sce)$relchange)
+# Gene expression matrix
+is(input)
+dim(input)
+input[seq_len(2), seq_len(2)]
+# The result of 2D dimensional reduction (e.g. t-SNE)
+is(twoD)
+dim(twoD)
+head(twoD)
+# Ligand-Receptor corresponding table extracted from LRBase.XXX.eg.db
+is(LR)
+dim(LR)
+head(LR, 2)
+# Celltype label and color scheme
+is(celltypes)
+length(celltypes)
+head(celltypes)
+# Core tensor values
+is(index)
+dim(index)
+head(index)
+is(corevalue)
+length(corevalue)
+head(corevalue)
+# Selected corevalue position with thr threshold "thr"
+is(selected)
+length(selected)
+head(selected)
+# The result of 2-class clustering
+# The result of analysis in each L vector
+is(ClusterL)
+dim(ClusterL)
+# The result of analysis in each R vector
+is(ClusterR)
+dim(ClusterR)
+# The result of analysis in each LR vector
+is(out.vecLR)
+```
+
+
+
+## Number of cells in each celltype
+
+```{r}
+color <- names(celltypes)
+colors <- celltypes[vapply(unique(color), function(x){which(color == x)[1]}, 0L)]
+numcells <- vapply(names(colors), function(x){length(which(color == x))}, 0L)
+numcells <- data.frame(numcells=numcells, celltypes=names(numcells))
+
+suppressPackageStartupMessages(library(plotly))
+plot_ly(numcells, x=~celltypes, y=~numcells, type="bar", marker = list(color = colors))
+```
+
+
+
+## Number of expressed genes in each celltype (Non-zero genes)
+
+```{r}
+expgenes <- apply(input, 2, function(x){length(which(x != 0))})
+expgenes <- data.frame(expgenes=expgenes, celltypes=names(celltypes))
+plot_ly(expgenes, y=~expgenes, color=color, colors=colors, type="box")
+```
+
+
+
+## Two dimensional plot of all cells
+
+```{r}
+plot_ly(x=twoD[,1], y=twoD[,2], color = color, colors = colors, type = "scatter", text = rownames(twoD), mode = "markers")
+```
+
+
+
+## Distribution of core tensor values
+
+```{r}
+corenames <- vapply(seq_len(nrow(index)), function(x){paste(index[x,seq_len(3)], collapse=",")}, "")
+plot_ly(x=seq_along(corevalue), y=corevalue, type="bar", color=names(corevalue), text=corenames, colors = c("#999999", "#E41A1C"))
+```
+
+
+
+# Ligand-Cell Patterns
+
+```{r}
+suppressPackageStartupMessages(library("heatmaply"))
+l <- metadata(sce)$sctensor$ligand
+if(nrow(l) >= 2){
+rownames(l) <- paste0("(",seq_len(nrow(l)), ",*,*)")
+heatmaply(l,xlab="Celltype",ylab="Pattern",fontsize_col=20,fontsize_row=20,subplot_widths=c(0.7, 0.1),subplot_heights=c(0.2, 0.7),labRow = rownames(l),labCol = colnames(l))
+}
+```
+
+
+## (1,*,*)-Pattern = Male_Soma_1
+![](figures/Pattern_1__.png)
+
+## (2,*,*)-Pattern = Male_Soma_4 & Male_Soma_3
+![](figures/Pattern_2__.png)
+
+## (3,*,*)-Pattern = Male_Soma_2
+![](figures/Pattern_3__.png)
+
+## (4,*,*)-Pattern = Male_FGC_3 & Male_Soma_3
+![](figures/Pattern_4__.png)
+
+
+
+# Receptor-Cell Patterns
+
+```{r}
+r <- metadata(sce)$sctensor$receptor
+if(nrow(r) >= 2){
+rownames(r) <- paste0("(*,",seq_len(nrow(r)), ",*)")
+heatmaply(r,xlab="Celltype",ylab="Pattern",fontsize_col=20,fontsize_row=20,subplot_widths=c(0.7, 0.1),subplot_heights=c(0.2, 0.7),labRow = rownames(r),labCol = colnames(r))
+}
+```
+
+
+## (*,1,*)-Pattern = Male_Soma_2
+![](figures/Pattern__1_.png)
+
+## (*,2,*)-Pattern = Male_Soma_3
+![](figures/Pattern__2_.png)
+
+## (*,3,*)-Pattern = Male_Soma_1
+![](figures/Pattern__3_.png)
+
+## (*,4,*)-Pattern = Male_Soma_4
+![](figures/Pattern__4_.png)
+
+
+
+# CCI-wise Hypergraph
+
+![](figures/CCIHypergraph.png){ width=100% }
+
+
+
+# Gene-wise Hypergraph
+
+```{r}
+library("scTensor")
+load("reanalysis.RData")
+
+scTensor:::.myvisNetwork(g)
+```
+
+[Details of Ligand Gene-centric Overview (selected)](ligand.html)
+
+[Details of Ligand Gene-centric Overview (all)](ligand_all.html)
+
+[Details of Receptor Gene-centric Overview (selected)](receptor.html)
+
+[Details of Receptor Gene-centric Overview (all)](receptor_all.html)
+
+
+# (Ligand-Cell, Receptor-Cell, ) -related L-R Pairs
+
+
+
+## (2,3,) -related L-R Pairs : (13.47%)
+[Details of (2,3,) -related L-R Pairs](pattern_2_3.html)
+
+
+
+## (2,2,) -related L-R Pairs : (12.54%)
+[Details of (2,2,) -related L-R Pairs](pattern_2_2.html)
+
+
+
+# Session Information
+
+
+```{r}
+sessionInfo()
+```
+
+
+
+# License
+
+Copyright (c) 2018 Koki Tsuyuzaki and Laboratory for Bioinformatics Research, RIKEN Center for Biosystems Dynamics Reseach Released under the [Artistic License 2.0](http://www.perlfoundation.org/artistic_license_2_0)
+
