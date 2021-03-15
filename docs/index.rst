@@ -25,6 +25,26 @@ News
 資料もくじ
 ^^^^^^^^^^
 
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
+    notebooks/Docker
+    notebooks/Seurat
+    notebooks/GuidedTutorial
+    notebooks/Monocle3
+    notebooks/GoogleColab
+    notebooks/Scanpy_Cluster
+    notebooks/Scanpy_PAGA
+    notebooks/Velocyto
+    notebooks/Velocyto.R
+    notebooks/Velocyto.python.DentateGyrus
+
+
+
+
+
+
 Introduction
 --------------------------
 
@@ -52,13 +72,6 @@ scRNA-seq
 - `Palantir <scRNAseq/Palantir.html>`_
 - `scVelo <scRNAseq/scVelo.html>`_
 
-scATAC-seq
------------------
-
-- `ChromVAR <scATACseq/ChromVAR.html>`_
-- `cicero <scATACseq/cicero.html>`_
-- `ArchR <scATACseq/ArchR.nb.html>`_
-- `Fly ATAC Atlas <scATACseq/FlyATACAtlas.html>`_
 
 利用について
 ^^^^^^^^^^^^^^

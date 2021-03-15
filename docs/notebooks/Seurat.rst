@@ -1,8 +1,8 @@
 ================================
-Seurat Introduction
+Seurat Tutorial
 ================================
 
-Seuratのチュートリアルで基本となる "`Guided tutorial <https://satijalab.org/seurat/v3.1/pbmc3k_tutorial.html>`_" を使って解析します。
+Seuratのチュートリアルで代表的な "`Guided tutorial <https://satijalab.org/seurat/v3.1/pbmc3k_tutorial.html>`_" を使って解析します。
 シングルセルデータの品質評価（QC）、クラスタリングが含まれます。
 
 | ここではRstudioを用います。Seurat, SleepWalkを用いますので、未インストールの場合は以下のコマンドでインストールしてください。
