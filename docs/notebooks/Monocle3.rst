@@ -1,5 +1,5 @@
 ================================
-Monocle: trajectory analysis
+Monocle3: trajectory analysis
 ================================
 
 Monocle3を用いた疑似時系列解析 (pseudo-time analysis) を行います。Rstudioに "Monocle3"というプロジェクトを新規作成し、その中で作業します。
