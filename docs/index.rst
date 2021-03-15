@@ -41,38 +41,6 @@ News
     notebooks/Velocyto.python.DentateGyrus
 
 
-
-
-
-
-Introduction
---------------------------
-
--  :doc:`notebooks/Docker`
-- `GoogleColab <scRNAseq/GoogleColab.html>`_
-
-scRNA-seq
--------------------------
-
-**クラスタリング**
-
--  :doc:`notebooks/Seurat`
-- `Seurat PBMC <scRNAseq/GuidedTutorial.html>`_
-- `Scanpy_Cluster <scRNAseq/Scanpy_Cluster.html>`_
-- `Scanpy_VisualizeMarkerGenes <scRNAseq/Scanpy_VisualizeMarkerGenes.html>`_
-- `SCCAF: Single-cell clustering assessment framework <scRNAseq/SCCAF.html>`_
-
-**軌道解析**
-
-- `Monocle3 <scRNAseq/Monocle3.html>`_
-- `Scanpy_PAGA <scRNAseq/Scanpy_PAGA.html>`_
--  :doc:`notebooks/Velocyto`
-- `Velocyto.R <scRNAseq/Velocyto.R.html>`_
-- `Velocyto DentateGyrus <scRNAseq/Velocyto.python.DentateGyrus.html>`_
-- `Palantir <scRNAseq/Palantir.html>`_
-- `scVelo <scRNAseq/scVelo.html>`_
-
-
 利用について
 ^^^^^^^^^^^^^^
 - 本資料の著作権は中戸に帰属します。

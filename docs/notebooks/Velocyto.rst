@@ -1,5 +1,5 @@
 ================================
-Velocyto Tutorial
+Velocyto Introduction
 ================================
 
 RNA velocity を利用して細胞の遷移方向を直接推定可能な **Velocyto** のチュートリアルです。
