@@ -13,8 +13,6 @@ Velocytoのインストール
 --------------------------------------------
 
 Velocyto は内部で boost library を使っており、Windows の R ではインストールすることは難しいです。
-本チュートリアルでは私が作成したインストール済の Docker イメージを使います。
-
 Linux や Mac terminal 上では boost library をインストールしたうえで以下のコマンドでインストール可能です。
 
 - Pythonの場合 (velocyto.py)
@@ -30,13 +28,14 @@ Linux や Mac terminal 上では boost library をインストールしたうえ
     install.packages("devtools")
     devtools::install_github("velocyto-team/velocyto.R")
 
+本チュートリアルでは私の singlecell_jupyter Docker イメージを使います。
 
 Dockerを用いたVelocytoの起動
 -------------------------------
 自分のPCでDockerが起動している状態であることを確認してください。
 Dockerイメージ から Jupyter を起動し、その上で Velocyto を読み込みます。
 
-**Docker起動 -> Dockerイメージの起動 -> イメージ内でJupyter (R or Python) 起動 -> Jupyter上でVelocytoを利用** という流れになります。
+**Docker起動 -> Dockerイメージからコンテナ起動 -> コンテナ内でJupyter (R or Python) 起動 -> Jupyter上でVelocytoを利用** という流れになります。
 
 
 入力データについて

@@ -28,7 +28,7 @@ Dockerイメージのダウンロード
 DockerからJupyterの起動
 ==========================
 | 本資料ではDockerイメージからJupyterを起動し、Jupyter上で作業します。
-| **Docker起動 -> Dockerイメージの起動 -> イメージ内でJupyter (R or Python) 起動 -> Jupyter上でツールを利用** という流れになります。
+| **Docker起動 -> Dockerイメージからコンテナ起動 -> コンテナ内でJupyter (R or Python) 起動 -> Jupyter上でツールを利用** という流れになります。
 
 **-v** オプションをつけることで、コンテナ内のディレクトリをホストPCのフォルダと同期させることができます。こうしておかないと、Docker内で作成したjupyterファイルがDocker終了後消えてしまいますので注意してください。
 
@@ -185,12 +185,6 @@ SingularityイメージからJupyterの起動
 
     # cellphonedbの起動
     singularity exec rnakato_singlecell_jupyter.img cellphonedb
-
-
-Mac terminalの場合
-^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 Jupyter notebookの使い方
 ================================
