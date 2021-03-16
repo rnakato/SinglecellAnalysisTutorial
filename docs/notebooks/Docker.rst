@@ -165,14 +165,14 @@ SingularityイメージからJupyterの起動
     singularity exec rnakato_singlecell_jupyter.img jupyternotebook.sh
 
 
-ホストPCのGPUを利用する場合は **-nv** オプションを付加してください。
+ホストPCのGPUを利用する場合は ``--nv`` オプションを付加してください。
 
 .. code-block:: sh
 
     singularity exec --nv rnakato_singlecell_jupyter.img jupyternotebook.sh
 
 
-ホストPCの特定のディレクトリを利用する場合は **-bind** オプションを付加してマウントします。
+ホストPCの特定のディレクトリを利用する場合は ``--bind`` オプションを付加してマウントします。
 
 .. code-block:: sh
 
@@ -229,8 +229,9 @@ opt/workディレクトリの中でファイルを作成すれば、同期した
 Dead Kernel について
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| 使用しているPCのスペックを超える作業をJupyter上で行った場合、Jupyterが強制終了してしまう場合があります。
+| 使用しているPCのマシンリソースを超える作業をJupyter上で行った場合にJupyterが強制終了してしまうことがあります。
+| (特にWin10 HomeでVirtual boxを起動している場合はスペック制限が厳しいです。)
 | その場合、ページ上部のKernelが "Dead Kernel" という表示になり、作業が続けられません。
-| この場合は一旦Jupyterのホーム画面に戻り、Jupyterファイルをshutdownしてから再起動する必要があります。
-| (特にWin10 HomeでVirtual boxを起動している場合は、スペック制限が厳しいです。)
-| 毎回終了してしまう場合は、Virtual boxの設定から許容するCPU/メモリ数を多くするか、より高スペックのPCを使うことを検討してください。
+| この場合はNotebook上部のボタンからカーネルの再起動を実行するか、一旦Jupyterのホーム画面に戻り、Jupyterファイルをshutdownしてから再起動する必要があります。
+| （重症の場合はJupyter ごと再起動した方がよい場合もある）
+| 毎回同じ箇所で終了してしまう場合は、Virtual boxの設定から許容するCPU/メモリ数を多くするか、より高スペックのPCを使うことを検討してください。
