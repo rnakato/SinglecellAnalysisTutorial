@@ -2,7 +2,9 @@
 Velocyto Introduction
 ================================
 
-RNA velocity を利用して細胞の遷移方向を直接推定可能な **Velocyto** のチュートリアルです。
+従来の軌道解析では得られた軌道の遷移方向やroot cell を自動推定できないため、マーカー遺伝子などを用いて自力で推定する必要がありました。
+ここでpre-mRNAの比率を元に推定される "RNA velocity" を用いると、細胞の遷移方向をデータから直接推定可能になります。 
+ここでは代表的なツールである **Velocyto** を実行します。
 
 元論文: `RNA velocity of single cells <https://www.nature.com/articles/s41586-018-0414-6>`_
 
@@ -10,18 +12,18 @@ RNA velocity を利用して細胞の遷移方向を直接推定可能な **Velo
 Velocytoのインストール
 --------------------------------------------
 
-Velocyto は内部で boost library を使っており、Windows の R ではインストールすることは難しいため、
+Velocyto は内部で boost library を使っており、Windows の R ではインストールすることは難しいです。
 本チュートリアルでは私が作成したインストール済の Docker イメージを使います。
 
-Linux や Mac terminal などで boost library をインストール済の状態であれば以下のコマンドでインストールすることができます。
+Linux や Mac terminal 上では boost library をインストールしたうえで以下のコマンドでインストール可能です。
 
-- Pythonの場合
+- Pythonの場合 (velocyto.py)
 
 .. code-block:: python
 
     pip install velocyto
 
-- Rの場合
+- Rの場合 (velocyto.R)
 
 .. code-block:: r
 
