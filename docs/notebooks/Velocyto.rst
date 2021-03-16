@@ -6,7 +6,7 @@ Velocyto Introduction
 ここでpre-mRNAの比率を元に推定される "RNA velocity" を用いると、細胞の遷移方向をデータから直接推定可能になります。 
 ここでは代表的なツールである **Velocyto** を実行します。
 
-元論文: `RNA velocity of single cells <https://www.nature.com/articles/s41586-018-0414-6>`_
+元論文: `RNA velocity of single cells, La Manno et al., Nature, 2018 <https://www.nature.com/articles/s41586-018-0414-6>`_
 
 
 Velocytoのインストール
