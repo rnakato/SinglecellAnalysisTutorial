@@ -15,6 +15,11 @@ Mac, Windows10 Pro, Windows10 Homeでそれぞれインストール・設定方�
 
 `技術講習会 docker環境の構築 改訂版 <./hayashi.pdf>`_
 
+その他参考ページ: 
+
+* `Ubuntu 18.04にDockerをインストールする <https://qiita.com/iganari/items/fe4889943f22fd63692a>`_
+* `WSL2でDockerを動かしてみる <https://www.techceed-inc.com/engineer_blog/6671/>`_
+
 Dockerイメージのダウンロード
 ==============================
 
