@@ -30,7 +30,6 @@ News
     notebooks/Docker
     notebooks/Seurat
     notebooks/GuidedTutorial
-    notebooks/Monocle3
     notebooks/GoogleColab
     notebooks/Scanpy_PBMC
     notebooks/Scanpy_PAGA

@@ -19,22 +19,6 @@ Monocle2はBioconductorを用いてインストール可能ですが、Monocle3�
    devtools::install_github('cole-trapnell-lab/leidenbase')
    devtools::install_github('cole-trapnell-lab/monocle3')
 
-.. note::
-
-   既にMonocle2がインストールしてある場合、以下のようなメッセージが出るかもしれません。この場合は "1: All" を選択してください。
-
-.. code-block:: r
-
-   > devtools::install_github('cole-trapnell-lab/monocle3')
-   Downloading GitHub repo cole-trapnell-lab/monocle3@master
-   These packages have more recent versions available.
-   Which would you like to update?
-   
-   1: All                     
-   2: CRAN packages only      
-   3: None                    
-   4: curl (4.1 -> 4.2) [CRAN]
-
 データのダウンロード
 --------------------------------------------
 今回はMonocle3の `軌道解析チュートリアル <https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/>`_ をもとに進めます。用いるデータは `Packer & Zhu et al. <https://science.sciencemag.org/content/365/6459/eaax1971>`_ による線虫のembryoからの細胞分化データです。
