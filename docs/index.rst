@@ -32,7 +32,7 @@ News
     notebooks/GuidedTutorial
     notebooks/Monocle3
     notebooks/GoogleColab
-    notebooks/Scanpy_Cluster
+    notebooks/Scanpy_PBMC
     notebooks/Scanpy_PAGA
     notebooks/Velocyto
     notebooks/Velocyto.R
