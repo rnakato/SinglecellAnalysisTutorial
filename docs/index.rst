@@ -37,6 +37,7 @@ News
     notebooks/Velocyto
     notebooks/Velocyto.R
     notebooks/Velocyto.python.DentateGyrus
+    notebooks/scVelo
 
 
 利用について
