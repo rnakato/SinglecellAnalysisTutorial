@@ -3,7 +3,7 @@ Velocyto Introduction
 ================================
 
 従来の軌道解析では得られた軌道の遷移方向やroot cell を自動推定できないため、マーカー遺伝子などを用いて自力で推測する必要がありました。
-ここで、mature/premature mRNAの比率を元に推定される "RNA velocity" を用いると、細胞の遷移方向をデータから直接推定可能になります。 
+ここで、mature/premature mRNAの比率を元に推定される "RNA velocity" を用いると、細胞の遷移方向をデータから直接推定可能になります。
 ここでは最も代表的なツールである **Velocyto** を実行する方法を紹介します。
 
 元論文: `RNA velocity of single cells, La Manno et al., Nature, 2018 <https://www.nature.com/articles/s41586-018-0414-6>`_
@@ -51,7 +51,7 @@ Dockerイメージ から Jupyter を起動し、その上で Velocyto を読み
 Velocytoは .loom 形式のファイルを入力として読み込みます。
 本チュートリアルでは既に生成されたファイルを使いますので必要ありませんが、自分のデータでvelocytoを使う場合は以下の手続きが必要になります。
 
-ここでは例として、10X CellRanger で生成されたディレクトリ（ここでは``10Xdir``）から.loomファイルを生成する``run10x``コマンドを紹介します。
+ここでは例として、10X CellRanger で生成されたディレクトリ（ここでは `10Xdir` ）から.loomファイルを生成する `run10x` コマンドを紹介します。
 
 .. code-block:: sh
 
@@ -67,4 +67,3 @@ Velocytoは .loom 形式のファイルを入力として読み込みます。
 
 - `Velocyto CLI Usage Guide <http://velocyto.org/velocyto.py/tutorial/cli.html>`_
 - `Download expressed repeats annotation <http://velocyto.org/velocyto.py/tutorial/cli.html#preparation>`_
-
