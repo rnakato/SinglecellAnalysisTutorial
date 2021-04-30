@@ -13,9 +13,9 @@ Dockerのインストール
 
 Mac, Windows10 Pro, Windows10 Homeでそれぞれインストール・設定方法が異なります。詳細は以下の林さん作成の資料を参照してください。
 
-`技術講習会 docker環境の構築 改訂版 <./hayashi.pdf>`_
+`技術講習会 docker環境の構築 改訂版 <http://nakatolab.iqb.u-tokyo.ac.jp/supplement/hayashi.pdf>`_
 
-その他参考ページ: 
+その他参考ページ:
 
 * `Ubuntu 18.04にDockerをインストールする <https://qiita.com/iganari/items/fe4889943f22fd63692a>`_
 * `WSL2でDockerを動かしてみる <https://www.techceed-inc.com/engineer_blog/6671/>`_
