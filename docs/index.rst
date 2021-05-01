@@ -37,6 +37,8 @@ News
 Seurat (Rstudio)
 ++++++++++++++++++++
 
+ここではSeuratを題材に、Rstudioの使い方と基本的なscRNA-seq解析のワークフロー、注意点について解説します。
+
 .. toctree::
     :maxdepth: 1
     :numbered:
@@ -46,6 +48,9 @@ Seurat (Rstudio)
 
 Scanpy (Google Colab, Jupyter)
 ++++++++++++++++++++++++++++++++++++++
+
+こちらの項目は `Scanpy Tutorial <https://scanpy.readthedocs.io/en/stable/index.html>`_ 及び 
+`scVelo Tutorial <https://scvelo.readthedocs.io/>`_ の内容を原著者の許諾のもとに翻訳・公開したものです。
 
 .. toctree::
     :maxdepth: 1
@@ -60,6 +65,8 @@ Scanpy (Google Colab, Jupyter)
 
 Velocyto (Jupyter)
 ++++++++++++++++++++++++++++++++++++++
+
+こちらの項目は `velocyto.py <http://velocyto.org/velocyto.py/index.html>`_ で公開されているnotebookを原著者の許諾のもとに翻訳・公開したものです。
 
 .. toctree::
     :maxdepth: 1
