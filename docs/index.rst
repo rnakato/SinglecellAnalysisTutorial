@@ -24,20 +24,47 @@ News
 資料もくじ
 ^^^^^^^^^^
 
+はじめに
+++++++++++++++
+
 .. toctree::
     :maxdepth: 1
     :numbered:
 
     notebooks/Docker
+    notebooks/GoogleColab
+
+Seurat (Rstudio)
+++++++++++++++++++++
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
     notebooks/Seurat
     notebooks/GuidedTutorial
-    notebooks/GoogleColab
+
+Scanpy (Google Colab, Jupyter)
+++++++++++++++++++++++++++++++++++++++
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
     notebooks/Scanpy_PBMC
     notebooks/Scanpy_PAGA
     notebooks/Scanpy_CorePlottingFunctions
     notebooks/ingest_and_BBKNN
     notebooks/VisiumSpatialTranscriptomics
     notebooks/scVelo
+
+Velocyto (Jupyter)
+++++++++++++++++++++++++++++++++++++++
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
     notebooks/Velocyto
     notebooks/Velocyto.R
     notebooks/Velocyto.python.DentateGyrus
