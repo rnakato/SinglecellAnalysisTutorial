@@ -34,10 +34,13 @@ News
     notebooks/GoogleColab
     notebooks/Scanpy_PBMC
     notebooks/Scanpy_PAGA
+    notebooks/Scanpy_CorePlottingFunctions
+    notebooks/ingest_and_BBKNN
+    notebooks/VisiumSpatialTranscriptomics
+    notebooks/scVelo
     notebooks/Velocyto
     notebooks/Velocyto.R
     notebooks/Velocyto.python.DentateGyrus
-    notebooks/scVelo
 
 
 利用について
