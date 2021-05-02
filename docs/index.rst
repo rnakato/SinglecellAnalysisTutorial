@@ -14,7 +14,7 @@
 
 News
 ^^^^
-| **2021/4/28: 資料Ver 1.5:** Scanpy, Velocytoを修正。scVeloを追加。Monocle3を非公開ページに移動。
+| **2021/4/28: 資料Ver 1.5:** Scanpy, Velocytoを修正,追加。scVeloを追加。Monocle3を非公開ページに移動。
 | **2021/3/15: 資料Ver 1.4:** 更に改定。 一般公開しました。
 | **2020/5/26: 資料Ver 1.3:** 全面的に改定。 Rを使った解析の一部を Rmarkdownに移行しました。
 | **2019/12/28: 資料Ver 1.2:** Dockerコンテナをnotebookと名付けて起動する方法で説明していましたが、「次に起動したらエラーになるのですが」という質問が大変多かったので、"--rm" オプションでコンテナを毎回削除するやり方に変更しました。
@@ -74,6 +74,7 @@ Velocyto (Jupyter)
 
     notebooks/Velocyto
     notebooks/Velocyto.R
+    notebooks/Velocyto_Pagoda2.ipynb
     notebooks/Velocyto.python.DentateGyrus
 
 
