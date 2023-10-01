@@ -10,10 +10,9 @@
 - 本資料は Rstudio, Jupyter notebook, Google Colaboratory というサービスを用いて執筆されています。
 - 使用するプログラミング言語はR, Pythonです。まれにLinuxシェル上での作業が含まれることもあります。
 
-
-
 News
 ^^^^
+| **2023/10/1: 資料Ver 1.6:** scVeloの内容をアップデート。。
 | **2021/4/28: 資料Ver 1.5:** Scanpy, Velocytoを修正,追加。scVeloを追加。Monocle3を非公開ページに移動。
 | **2021/3/15: 資料Ver 1.4:** 更に改定。 一般公開しました。
 | **2020/5/26: 資料Ver 1.3:** 全面的に改定。 Rを使った解析の一部を Rmarkdownに移行しました。
@@ -61,7 +60,9 @@ Scanpy (Google Colab, Jupyter)
     notebooks/Scanpy_CorePlottingFunctions
     notebooks/ingest_and_BBKNN
     notebooks/VisiumSpatialTranscriptomics
-    notebooks/scVelo
+    notebooks/scVelo1
+    notebooks/scVelo2
+    notebooks/scVelo3
 
 Velocyto (Jupyter)
 ++++++++++++++++++++++++++++++++++++++
