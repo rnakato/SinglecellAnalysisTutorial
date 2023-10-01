@@ -48,8 +48,7 @@ Seurat (Rstudio)
 Scanpy (Google Colab, Jupyter)
 ++++++++++++++++++++++++++++++++++++++
 
-こちらの項目は `Scanpy Tutorial <https://scanpy.readthedocs.io/en/stable/index.html>`_ 及び 
-`scVelo Tutorial <https://scvelo.readthedocs.io/>`_ の内容を原著者の許諾のもとに翻訳・公開したものです。
+こちらの項目は `Scanpy Tutorial <https://scanpy.readthedocs.io/en/stable/index.html>`_ の内容を原著者の許諾のもとに翻訳・公開したものです。
 
 .. toctree::
     :maxdepth: 1
@@ -60,9 +59,6 @@ Scanpy (Google Colab, Jupyter)
     notebooks/Scanpy_CorePlottingFunctions
     notebooks/ingest_and_BBKNN
     notebooks/VisiumSpatialTranscriptomics
-    notebooks/scVelo1
-    notebooks/scVelo2
-    notebooks/scVelo3
 
 Velocyto (Jupyter)
 ++++++++++++++++++++++++++++++++++++++
@@ -77,6 +73,19 @@ Velocyto (Jupyter)
     notebooks/Velocyto.R
     notebooks/Velocyto_Pagoda2.ipynb
     notebooks/Velocyto.python.DentateGyrus
+
+scVelo (Jupyter)
+++++++++++++++++++++++++++++++++++++++
+
+こちらの項目は `scVelo Tutorial <https://scvelo.readthedocs.io/>`_ の内容を原著者の許諾のもとに翻訳・公開したものです。
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
+    notebooks/scVelo1
+    notebooks/scVelo2
+    notebooks/scVelo3
 
 
 利用について
