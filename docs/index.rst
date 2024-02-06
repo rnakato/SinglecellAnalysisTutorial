@@ -12,6 +12,7 @@
 
 News
 ^^^^
+| **2024/2/6: 資料Ver 1.7:** Scanpyの内容をアップデート、Anndataを追加しました。
 | **2023/10/1: 資料Ver 1.6:** scVeloの内容をアップデートしました。
 | **2021/4/28: 資料Ver 1.5:** Scanpy, Velocytoを修正,追加。scVeloを追加。Monocle3を非公開ページに移動。
 | **2021/3/15: 資料Ver 1.4:** 更に改定。 一般公開しました。
@@ -59,6 +60,7 @@ Scanpy (Google Colab, Jupyter)
     notebooks/Scanpy_CorePlottingFunctions
     notebooks/ingest_and_BBKNN
     notebooks/VisiumSpatialTranscriptomics
+    notebooks/Anndata
 
 Velocyto (Jupyter)
 ++++++++++++++++++++++++++++++++++++++
